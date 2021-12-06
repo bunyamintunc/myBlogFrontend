@@ -9,36 +9,36 @@
             <p class="bilgi">Kitap Ekle</p>
             <div class="form-div">
                 
-                <form class="form-style-7" >
+                <form [formGroup]="bookAddForm" (ngSubmit)="add()" class="form-style-7" >
                     <ul>
                       <li>
                         <label for="name">Kitap Adi</label>
-                        <input type="text" name="name" maxlength="100" />
+                        <input type="text" name="name" maxlength="100"  formControlName="bookName" />
                         <span>kitap adını giriniz</span>
                       </li>
                       <li>
                         <label for="email">Yazar Adi</label>
-                        <input type="email" name="email" maxlength="100" />
+                        <input type="text" name="bookWiter" formControlName="bookWriter" maxlength="100" />
                         <span>yazar adını giriniz.</span>
                       </li>
                       <li>
                         <label for="url">Sayfa Sayısı</label>
-                        <input type="url" name="url" maxlength="100" />
+                        <input type="number" formControlName="countPaper" name="url" maxlength="100" />
                         <span>sayfa sayısını giriniz</span
                         >
                       </li>
                       <li>
                         <label for="bio">Kategori</label>
-                        <input type="url" name="url" maxlength="100" />
+                        <input type="number" formControlName="categoryId" name="url" maxlength="100" />
                         <span>hangi kategoride oldugunu belirtiniz</span>
                       </li>
                       <li>
                         <label for="bio">Resim</label>
-                        <input type="url" name="url" maxlength="100" />
+                        <input type="text" formControlName="bookImage" name="url" maxlength="100" />
                         <span>lütfen fotoğraf ekleyiniz.</span>
                       </li>
                       <li>
-                        <input type="submit" value="Send This" />
+                        <button type="submit">Kitap Ekle</button>
                       </li>
                     </ul>
                   </form>

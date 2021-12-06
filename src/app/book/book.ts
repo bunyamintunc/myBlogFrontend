@@ -1,8 +1,8 @@
 export class Book{
-    Id:number;
-    bookName:string;
-    booksWriter:string;
-    countPaper:number;
-    categoryId:number;
-    booksImage:string;
+    Id !: number;
+    bookName !: string;
+    bookWriter !: string;
+    countPaper !: number;
+    categoryId !: number;
+    bookImage !: string;
 }
