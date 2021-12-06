@@ -7,12 +7,14 @@ import { BookComponent } from './book/book.component';
 import { NavComponent } from './nav/nav.component';
 
 import {HttpClientModule} from "@angular/common/http";
+import { BookAddComponent } from './book/book-add/book-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
-    NavComponent
+    NavComponent,
+    BookAddComponent
   ],
   imports: [
     BrowserModule,
