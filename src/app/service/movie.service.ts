@@ -1,17 +1,42 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { Movie } from '../movie/movie';
 
 @Injectable()
 export class MovieService {
   
-  url="http://localhost:8080/api/movies/getall"
+  url="http://localhost:8080/api/movies"
   constructor(private http:HttpClient) { }
 
   getMovie():Observable<Movie[]>{
 
-    return this.http.get<Movie[]>(this.url)
+    return this.http.get<Movie[]>(this.url+"/getall")
+  }
 
+  addMovie(movie : Movie | any):Observable<Movie>{
+    const httpOptions={
+      headers : new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Token',
+      })
+    };
+    
+    return this.http.post<Movie>(movie,this.url+"/add",httpOptions).pipe(
+      tap((data) => console.log(JSON.stringify(data))),
+      catchError(this.heandleError)
+      
+    );
+  }
+
+  heandleError(err: HttpErrorResponse) {
+    let errorMessage = '';
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = err.error.message;
+    } else {
+      errorMessage = 'sistemsel bir hata';
+    }
+
+    return throwError(errorMessage);
   }
 }

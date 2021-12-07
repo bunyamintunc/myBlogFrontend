@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { BookAddComponent } from './book/book-add/book-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './movie/movie.component';
+import { MovieAddComponent } from './movie/movie-add/movie-add.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MovieComponent } from './movie/movie.component';
     BookComponent,
     NavComponent,
     BookAddComponent,
-    MovieComponent
+    MovieComponent,
+    MovieAddComponent
   ],
   imports: [
     BrowserModule,
