@@ -11,6 +11,7 @@ import { BookAddComponent } from './book/book-add/book-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './movie/movie.component';
 import { MovieAddComponent } from './movie/movie-add/movie-add.component';
+import { AbouthMeComponent } from './abouth-me/abouth-me.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MovieAddComponent } from './movie/movie-add/movie-add.component';
     NavComponent,
     BookAddComponent,
     MovieComponent,
-    MovieAddComponent
+    MovieAddComponent,
+    AbouthMeComponent
   ],
   imports: [
     BrowserModule,
