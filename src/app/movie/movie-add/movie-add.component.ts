@@ -1,4 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MovieService } from 'src/app/service/movie.service';
@@ -7,42 +7,44 @@ import { Movie } from '../movie';
 @Component({
   selector: 'app-movie-add',
   templateUrl: './movie-add.component.html',
-  styleUrls: ['./movie-add.component.css']
+  styleUrls: ['./movie-add.component.css'],
+  providers:[MovieService]
 })
 export class MovieAddComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder,private movieService:MovieService) { }
+  constructor(private builder : FormBuilder,
+    private movieService:MovieService ) { }
 
-  addMovieForm !: FormGroup
-  movie:Movie=new Movie();
+    movieAddForm !: FormGroup 
+    movie:Movie=new Movie();
 
-  createFormAddMovie(){
-    this.addMovieForm=this.formBuilder.group({
+    createMovieAddForm(){
+      this.movieAddForm=this.builder.group({
+        movieName:["",Validators.required],
+        description:["",Validators.required],
+        movieImage:["",Validators.required],
+        watchDate:["",Validators.required],
+        
 
-      movieName:["",Validators.required],
-      description:["",Validators.required],
-      movieImage:["",Validators.required],
-      watchDate:["",Validators.required]
 
-    })
-  }
+
+      })
+    }
 
   ngOnInit(): void {
-    this.createFormAddMovie()
+    this.createMovieAddForm()
+
+
   }
 
   add(){
-
-    if(this.addMovieForm.valid){
-      this.movie=Object.assign({},this.addMovieForm.value)
-      
+    if(this.movieAddForm.valid){
+      this.movie=Object.assign({},this.movieAddForm.value)
     }
-
     this.movieService.addMovie(this.movie).subscribe(data=>{
-      alert(data.movieName +"Başari ile eklendi")
+      alert(data.movieName +"eklendi")
     })
-
-
   }
+
 
 }
