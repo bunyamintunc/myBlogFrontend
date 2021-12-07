@@ -9,13 +9,15 @@ import { NavComponent } from './nav/nav.component';
 import {HttpClientModule} from "@angular/common/http";
 import { BookAddComponent } from './book/book-add/book-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
     NavComponent,
-    BookAddComponent
+    BookAddComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
