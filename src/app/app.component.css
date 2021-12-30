@@ -72,4 +72,27 @@ body {
     position: relative;
     margin-top: 50px;
   }
+
+  .anakutu{
+    
+    width: 100%;
+    height: 100%;
+    background-color:  rgb(8, 168, 168);
+  }
+  .main{
+    background-color:  rgb(8, 168, 168);
+    width: 100%;
+    height: 600px;
+    margin-top: 0px;
+
+  }
+  .b{
+   
+    width: 100%;
+
+  }
+  .container{
+    width: 100%;
+    height: 100px;
+  }
   

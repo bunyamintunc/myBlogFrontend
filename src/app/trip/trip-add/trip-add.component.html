@@ -1,0 +1,60 @@
+<div class="container">
+
+    <div class="kutu">
+
+        <div class="kutu-1">
+
+        </div>
+        <div class="kutu-2">
+            <p class="bilgi">Kitap Ekle</p>
+            <div class="form-div">
+                
+                <form  [formGroup]="tripAddFrom"  (ngSubmit)="add()" class="form-style-7" >
+                    <ul>
+                     
+                      <li>
+                        <label for="name">Film Adı</label>
+                        <input type="text" name="name" maxlength="100"  formControlName="place_visited" />
+                        <span>gezdiğiniz yer</span>
+                      </li>
+                      <li>
+                        <label for="email">İzleme Tarihi</label>
+                        <input type="text" name="bookWiter" formControlName="country" maxlength="100" />
+                        <span>Ülke.</span>
+                      </li>
+                      <li>
+                        <label for="url">Film Fotoğrafı</label>
+                        <input type="text" formControlName="place_image" name="url" maxlength="100" />
+                        <span>gezi  fotografını giriniz</span
+                        >
+                      </li>
+                      <li>
+                        <label for="bio">Açıklama</label>
+                        <input type="text" formControlName="descriptions" name="url" maxlength="300" />
+                        <span>Açıklama giriniz(isteğe bağlı)</span>
+                      </li>
+                      <li>
+                        <label for="bio">Açıklama</label>
+                        <input type="text" formControlName="province" name="url" maxlength="300" />
+                        <span>il</span>
+                      </li>
+                    
+                      <li>
+                        <button type="submit">Film Ekle</button>
+                      </li>
+                    </ul>
+                  </form>
+            </div>
+           
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>
+

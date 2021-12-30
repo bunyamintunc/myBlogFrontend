@@ -12,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MovieComponent } from './movie/movie.component';
 import { MovieAddComponent } from './movie/movie-add/movie-add.component';
 import { AbouthMeComponent } from './abouth-me/abouth-me.component';
+import { HomeComponent } from './home/home.component';
+import { TripComponent } from './trip/trip.component';
+import { TripAddComponent } from './trip/trip-add/trip-add.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { AbouthMeComponent } from './abouth-me/abouth-me.component';
     BookAddComponent,
     MovieComponent,
     MovieAddComponent,
-    AbouthMeComponent
+    AbouthMeComponent,
+    HomeComponent,
+    TripComponent,
+    TripAddComponent,
+  
   ],
   imports: [
     BrowserModule,

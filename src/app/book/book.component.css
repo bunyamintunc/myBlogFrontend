@@ -5,3 +5,15 @@
 #ayrinti{
     margin: auto;
 }
+.card{
+    margin-top: 20px;
+    float: left;
+    margin-left: 70px;
+}
+#card{
+    width: 265px;
+    height: 90px; 
+ overflow: hidden; /* taşacak kısımları gizle. */
+ /* alt satırı gösterme, alt satıra inme. */
+ text-overflow: ellipsis;
+}
